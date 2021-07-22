@@ -65,6 +65,18 @@ ______ _   _  _____
 """
 
 
+dmitry = """
+
+    ____            _ __            
+   / __ \____ ___  (_) /________  __
+  / / / / __ `__ \/ / __/ ___/ / / /
+ / /_/ / / / / / / / /_/ /  / /_/ / 
+/_____/_/ /_/ /_/_/\__/_/   \__, /  
+                           /____/   
+
+"""
+
+
 """ clase inicial, creadad principalmente para mostrar una ayuda y las opciones disponibles """
 class help:
 	def __init__(self):
@@ -107,28 +119,37 @@ class Attack:
 				break
 		print(Fore.MAGENTA)
 		print(what_banner)
+		#en este fase llamamos los scripts uno a uno connforme a su ejecucion.
 		subprocess.run("whatweb {}".format(sys.argv[2]), shell=True, check=False)
-		time.sleep(1)
+		time.sleep(2)
+		print("\n\n")
 		subprocess.run("whois {}".format(sys.argv[2]), shell= True, check=False)
 		time.sleep(2)
+		print("\n\n")
 		subprocess.run("wafw00f {}".format(sys.argv[2]), shell= True, check=False)
 		time.sleep(2)
+		print("\n\n")
 		print(Fore.GREEN)
 		print(dnsrecon)
 		subprocess.run("dnsrecon -d {}".format(sys.argv[2]), shell= True, check=False)
 		time.sleep(2)
+		print("\n\n")
 		subprocess.run("nmap -sV -v {}".format(sys.argv[2]), shell= True, check=False)
 		time.sleep(2)
+		print("\n\n")
 		subprocess.run("wpscan --url {}".format(sys.argv[2]), shell= True, check=False)
 		time.sleep(2)
+		print("\n\n")
 		subprocess.run("theHarvester -d {} -b google".format(sys.argv[2]), shell= True, check=False)
 		time.sleep(1)
-		subprocess.run("joomscan -u {}".format(sys.argv[2]), shell= True, check=False)
+		print("\n\n")
+		print(Fore.BLUE)
+		print(dmitry)
+		subprocess.run("dmitry -s -e {}".format(sys.argv[2]), shell= True, check=False)
 		time.sleep(2)
-		#subprocess.run("wapiti -u {} --scope page".format(sys.argv[2]), shell= True, check=False)
 
 
-
+#condicionales que dados los argumentos introducidos cumpliran su funcion.
 if __name__=="__main__":
 	if len(sys.argv)==1:
 		ayudar = help()
