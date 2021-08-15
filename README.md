@@ -3,3 +3,5 @@ __Script en Python que automatiza las busquedas de informacion y vulnerabilidade
 
 # Instalacion
 __git clone https://github.com/Blacksterhack/s0f14__
+
+__python s0f14.py__
